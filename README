@@ -1,0 +1,23 @@
+This is a mirror of http://www.vim.org/scripts/script.php?script_id=2880
+
+This is a syntax file for the rc shell scripting language.  
+
+Credits
+
+Most of the work is done by Andy.  I have only made some minor changes to make this syntax highlight works with Byron Rakitzis' reimplementation.
+
+For unix (not plan9) users, there are two slightly different rc available.  One is plan9port's version and the other is Byron Rakitzis' (as packaged by Debian and other *nix software distribution).  This syntax file is compatible with both versions.  (There is a minor tradeoff: less powerful `(ba)sh like substitution` syntax error detection. For a pure syntax file" for p9p, see: http://lug.rose-hulman.edu/svn/misc/trunk/config/spenceal/vim/ )
+
+Bug Report: http://bitbucket.org/weakish/weakishscripts/issues/
+
+Tips for using rc shell in Vim (this is not related to syntax directly, but I think users who codes rc shell script in Vim may have interests):
+
+Add the following lines to your .vimrc:
+
+set shell=/usr/bin/rc\ -l
+"  or /bin/rc or /usr/local/bin/rc or /opt/local /bin/rc, etc
+set shellcmdflag=-c
+set shellpipe=>[2=1]\|\ tee
+set shellredir=>%s\ >[2=1]
+
+
