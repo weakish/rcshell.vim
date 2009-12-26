@@ -2,12 +2,13 @@
 " Language:     rc
 " Maintainer:   Andy Spencer <andy753421@gmail.com>, 
 " Weakish Jiang <weakish@gmail.com>
-" Last Change:  2009-12-04 
+" Last Change:  2009-12-26 
 
-"Creadits
+"Credits
 """""""""""""
-" Most of the work is done by Andy.  I have only made some minor changes
-" to make this syntax highlight works with Byron Rakitzis' reimplementation.
+" Most of the work is done by Andy.  I have only made some minor changes:
+" * make this syntax highlight works with Byron Rakitzis' reimplementation.
+" * edit rcHereDoc match pattern to get <<EOF >output highlighted correctly.
 " -- weakish
 "
 "Info
@@ -118,11 +119,11 @@ syn cluster rcRedirect  contains=rcRedir,rcHereDoc
 syn match   rcRedir     "[<>]\v(\[\d+\=?\d*])?\ze([^{]|$)"  skipwhite nextgroup=@rcArgument contains=rcNumber
 syn match   rcRedir     ">>"                                skipwhite nextgroup=@rcArgument
 
-syn region  rcHereDoc   matchgroup=rcOperator    start="<<\z(.*\)"   end="^\z1$" contains=rcVar
+syn region  rcHereDoc   matchgroup=rcOperator    start="<<\z([^<> ]\+\)"   end="^\z1$" contains=rcVar
 syn region  rcHereDoc   matchgroup=rcOperator    start="<<'\z(.*\)'" end="^\z1$"
 " Todo: what's with ^'s in here docs?
-" Todo: `<<EOF >foo.txt' ?
-
+" Todo: <<'>' >output or <<' 'EOF >output still doesn't get highlighted
+" correct, but I guess peopel are unlikely to write such scripts. 
 
 "Compound Commands
 """"""""""""""""""
