@@ -1,12 +1,12 @@
 " Vim syntax file
 " Language:     rc
-" Maintainer:   Andy Spencer <andy753421@gmail.com>, 
-" Weakish Jiang <weakish@gmail.com>
-" Last Change:  2009-12-26 
+" Maintainer:  	Jakukyo Friel <weakish@gmail.com>
+" Last Change:  2014-12-17
 
 "Credits
 """""""""""""
-" Most of the work is done by Andy.  I have only made some minor changes:
+" Most of the work is done by Andy Andy Spencer.
+" I have only made some minor changes:
 " * make this syntax highlight works with Byron Rakitzis' reimplementation.
 " * edit rcHereDoc match pattern to get <<EOF >output highlighted correctly.
 " -- weakish
@@ -16,36 +16,11 @@
 "
 " This syntax file works with both Byron Rakitzis' reimplementation and
 " plan9port's implementation.  
-" (There is a tradeoff: less powerful `(ba)sh like substitution` syntax
-" error detection. For a pure syntax file" for p9p, see:
-" http://lug.rose-hulman.edu/svn/misc/trunk/config/spenceal/vim/ )
+" There is a tradeoff: less powerful `(ba)sh like substitution` syntax
+" error detection.
 "
-"Usage
-"""""""""""
-" Copy rc.vim to ~/.vim/syntax/rc.vim
-" or c:\program files\vim\vimfiles\syntax\rc.vim (if you are on Windows)
-" (Optional) Add this line in your .vimrc:
-" au BufRead,BufNewFile *.rc set filetype=rc
 "
-"Other Tips
-""""""""""""""
-" If you want to use rc shell as the embedded shell in vim,
-" you may add these lines to your .vimrc:
-" set shell=/usr/bin/rc\ -l
-" " or /bin/rc or /usr/local/bin/rc or /opt/local/bin/rc, etc
-" set shellcmdflag=-c
-" set shellpipe=>[2=1]\|\ tee
-" set shellredir=>%s\ >[2=1]
-" (This syntax is for Byron R's rc, p9p rc may differ.)
 "
-"Bug Report
-""""""""""""""
-" http://bitbucket.org/weakish/weakishscripts/issues/
-"Hack
-""""""""""""""
-" A test file is available at
-" http://bitbucket.org/weakish/weakishscripts/src/tip/test.rc
-
 " For version 5.x: Clear all syntax items
 " For version 6.x: Quit when a syntax file was already loaded
 if version < 600
