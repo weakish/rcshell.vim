@@ -12,6 +12,8 @@ This syntax file is compatible with both versions.
 [plan9port]: https://github.com/9fans/plan9port
 [9base]: http://tools.suckless.org/9base
 
+This syntax is comptible with Vim 5.7-6.4.
+
 ## Install
 
 If you use [Vundle](https://github.com/gmarik/vundle), add the following line to your `~/.vimrc`:
