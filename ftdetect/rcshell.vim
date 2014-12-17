@@ -1,1 +1,1 @@
-au BufRead,BufNewFile .rcrc*,rcrc,*.rc setf rcshell
+au BufRead,BufNewFile .rcrc*,rcrc,*.rc set filetype=rcshell
