@@ -1,4 +1,4 @@
-This is a syntax file for the rc shell scripting language.  
+This is a syntax file for the rc shell scripting language.
 
 ## Compatibility
 
@@ -43,6 +43,34 @@ cd ~/.vim
 tar --strip=1 -zxf path/to/master.tar.gz
 ```
 
+## Configuration
+
+By default, `.rcrc*`, `rcrc` and `*.rc` will be highlighted.
+
+If you want to add other file extensions, you can add the following lines in `.vimrc`:
+
+```vim
+au BufRead,BufNewFile *.your_exetension set filetype=rcshell
+```
+
+If you want to use `.rcrc*`, `rcrc` or `*.rc` for other file type, you specify the file type in `.vimrc`.
+
+For example, if you want to reverse `.rc` for M$ Resource file:
+
+```vim
+au BufRead,BufNewFile *.rc set filetype=rc
+```
+
+As `rc` is the default file type in Vim, you can also use this line instead:
+
+```vim
+au BufRead,BufNewFile *.your_exetension setfiletype rcshell
+```
+
+`:setfiletype` will only set 'filetype' if no file type was detected yet.
+
+See `:help filetype` and `:help setfiletype` for more information.
+
 ## Repository
 
 - **Repository:** http://github.com/weakish/rcshell.vim
@@ -54,9 +82,9 @@ This is based on [Andy Spencer][andy]'s work for the plan9 rc shell.
 There is a minor trade off for maintain compatibility with two versions of rc mentioned above:
 less powerful `(ba)sh like substitution` syntax error detection.
 
-[andy]: https://github.com/Andy753421 
+[andy]: https://github.com/Andy753421
 
-## Tips 
+## Tips
 
 This is not related to syntax directly, but I think users who codes rc shell script in Vim may have interests.
 

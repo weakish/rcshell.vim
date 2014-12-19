@@ -15,7 +15,7 @@
 """"""""""
 "
 " This syntax file works with both Byron Rakitzis' reimplementation and
-" plan9port's implementation.  
+" plan9port's implementation.
 " There is a tradeoff: less powerful `(ba)sh like substitution` syntax
 " error detection.
 "
@@ -81,7 +81,7 @@ syn match   rcVarSpecial "\v\$?<(home|ifs|path|pid|prompt|status|contained)>" co
 
 syn region  rcSubst      matchgroup=rcInclude    start="[`<>]{" end="}" skipwhite nextgroup=@rcArgument2 contains=@rcList
 syn region  rcSubst      matchgroup=rcInclude    start="`(" end=")" skipwhite nextgroup=@rcArgument2 contains=@rcArgument
-syn match   rcSub        "`\<\S\+\>"     
+syn match   rcSub        "`\<\S\+\>"
 syn match   rcJoin       "\^"                               skipwhite nextgroup=@rcArgument2 contains=rcError
 syn match   rcError      "\v(^|\^)\s*\^|\^\ze\s*($|#|;|\^)" skipwhite nextgroup=@rcArgument2
 " Todo: Error on ^$
@@ -98,7 +98,7 @@ syn region  rcHereDoc   matchgroup=rcOperator    start="<<\z([^<> ]\+\)"   end="
 syn region  rcHereDoc   matchgroup=rcOperator    start="<<'\z(.*\)'" end="^\z1$"
 " Todo: what's with ^'s in here docs?
 " Todo: <<'>' >output or <<' 'EOF >output still doesn't get highlighted
-" correct, but I guess peopel are unlikely to write such scripts. 
+" correct, but I guess peopel are unlikely to write such scripts.
 
 "Compound Commands
 """"""""""""""""""
@@ -112,7 +112,7 @@ syn region  rcIf         matchgroup=rcConditional start="if\s*("   end=")"     c
 syn match   rcIfNot      "\<if\s\+not\>"
 " Todo: error on if(..) <command> <command> if not
 "       use: matchgroup=rcIfNot end="if not"?
-syn match   rcElse       "\<else\>" 
+syn match   rcElse       "\<else\>"
 
 syn region  rcFor        matchgroup=rcRepeat      start="for\s*("   end=")"    contains=rcForIn,@rcArgument
 
@@ -139,7 +139,7 @@ syn match   rcAssign     "\w\+\ze\s*="                                         s
 syn cluster rcBuiltins contains=rcPrefixes,rcBuiltinMatch,rcBuiltinKeyword,coreutils,p9putils
 syn match   rcPrefixes       "[!@]"
 syn match   rcBuiltinMatch   skipwhite nextgroup=@rcArgument2 "[.~]"
-syn keyword rcBuiltinKeyword skipwhite nextgroup=@rcArgument2 break builtin cd echo eval exec exit flag limit newpgrp rfork shift umask wait whatis 
+syn keyword rcBuiltinKeyword skipwhite nextgroup=@rcArgument2 break builtin cd echo eval exec exit flag limit newpgrp rfork shift umask wait whatis
 syn keyword coreutils        skipwhite nextgroup=@rcArgument2 dd cp df du ln ls mv rm tr wc cat dir cut env pwd seq tty yes date echo expr head tail sort stty sync true vdir dirname chgrp chmod chown false mkdir mknod rmdir sleep touch uname chroot mkfifo mktemp readlink basename DIR_COLORS du id nl od pr tr wc dir cut env fmt ptx seq tac tee sum tty who yes arch comm expr fold head join link nice shuf tail sort test stat uniq vdir unexpand dirname chcon cksum nohup paste pinky shred sleep split touch tsort uname users sha1sum truncate logname base64 timeout chroot csplit factor expand hostid md5sum sha224sum sha256sum mkfifo mktemp sha384sum sha512sum printf runcon stdbuf unlink whoami printenv pathchk dircolors readlink install basename
 syn keyword p9putils         skipwhite nextgroup=@rcArgument2 9 B E g p u 9a 9c 9l 9p bc cb db dc dd ed du lc mc ls mk pr ps rc rm tr wc xd 9ar 9fs awd awk cal cat bmp cmp dns eqn fmt gif hoc ico img jpg lex man pbd pic png ppm psu psv rio sam sed seq sig tar tbl tcs tee src srv sum vac web win zip yuv troff2png dnsquery Mail acid acme date comm core crop dial dict diff echo file freq grap hget grep hist gzip ipso join kill mapd look news nobs page plot read scat slay tail sort test time stop tpic tref vcat uniq vnfs yacc cmapcube secstored troff2html sftpcache delatex cleanname devdraw Getdir 9term 9660srv factotum disknfs adict ascii astro bzip2 fsize graph gview iconv idiff resample label mkdir mount mtime nroff plumb proof ramfs sleep spell split sprog stack start stats togif toico topng toppm touch troff vacfs tweak units unvac unutf unzip usage wmail netfileget netfileput doctype acidtypes htmlroff samsave samterm dsa2pub dsa2ssh secuser ndbmkhash sha1sum rsa2csr rsa2pub rsa2ssh rsafill listen1 ndbipquery ndbquery auxstats snarfer lookman tcolors Netfiles calendar aescbc codereview strings bundle colors deroff dnstcp dsagen factor fontsrv ndbmkdb fortune tr2post getflags gunzip import secstore pemdecode md5sum mk9660 pemencode netkey passwd vbackup primes psdownload unicode unmount rsagen vmount vwhois xshove acmeevent yesterday vmount0 ndbmkhosts asn12dsa asn12rsa statusbar htmlfmt netfilestat auxclog wintext rsa2x509 9pfuse readcons plumber basename 9pserve dump9660 namespace bunzip2 psfonts dnsdebug
 
@@ -162,7 +162,7 @@ syn match rcError "\$(.\{-})\|\${.\{-}}\|\d\+>\(&\d\+\)\?\|`[^{]\{-}`\s\|{.*,.*}
 hi def link rcTermin         Operator
 hi def link rcContinue       Operator
 hi def link rcComment        Comment
-"Arguments and Variables     
+"Arguments and Variables
 hi def link rcNumber         Number
 hi def link rcPattern        PreProc
 hi def link rcQuoted         String
@@ -171,18 +171,18 @@ hi def link rcVar            Identifier
 hi def link rcVarOper        SpecialChar
 hi def link rcVarSpecial     Keyword
 hi def link rcJoin           Special
-"I/O Redirection             
+"I/O Redirection
 hi def link rcRedir          Operator
 hi def link rcHereDoc        String
-"Compound Commands           
+"Compound Commands
 hi def link rcPipe           Operator
 hi def link rcLogical        Operator
 hi def link rcIfNot          Conditional
 hi def link rcElse           Conditional
 hi def link rcNote           Keyword
 hi def link rcAssign         Identifier
-hi def link rcPrefixes       Macro     
-"Built-in Commands           
+hi def link rcPrefixes       Macro
+"Built-in Commands
 hi def link rcBuiltinKeyword Keyword
 hi def link rcBuiltinMatch   Keyword
 hi def link coreutils        Keyword
