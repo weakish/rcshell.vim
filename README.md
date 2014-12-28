@@ -45,7 +45,7 @@ tar --strip=1 -zxf path/to/master.tar.gz
 
 ## Configuration
 
-By default, `.rcrc*`, `rcrc` and `*.rc` will be highlighted.
+By default, `.rcrc*`, `rcrc` and files with a shebang of `rc` will be highlighted.
 
 If you want to add other file extensions, you can add the following lines in `.vimrc`:
 
@@ -70,6 +70,12 @@ au BufRead,BufNewFile *.your_exetension setfiletype rcshell
 `:setfiletype` will only set 'filetype' if no file type was detected yet.
 
 See `:help filetype` and `:help setfiletype` for more information.
+
+If you want to disable this syntax file, add the following line in your `.vimrc`:
+
+```vim
+let g:loaded_rcshell = 1
+```
 
 ## Repository
 
