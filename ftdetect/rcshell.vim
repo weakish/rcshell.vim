@@ -1,4 +1,4 @@
-au BufRead,BufNewFile .rcrc*,rcrc, set filetype=rcshell
+autocmd BufRead,BufNewFile .rcrc*,rcrc, set filetype=rcshell
 
 function! s:DetecRcShell()
   let shebang = getline(1)
@@ -7,4 +7,4 @@ function! s:DetecRcShell()
   endif
 endfunction
 
-autocmd BufNewFile,BufRead * call s:DetectRcShell()
+autocmd BufRead,BufNewFile * call s:DetectRcShell()
