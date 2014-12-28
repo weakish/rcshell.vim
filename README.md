@@ -84,6 +84,10 @@ less powerful `(ba)sh like substitution` syntax error detection.
 
 [andy]: https://github.com/Andy753421
 
+## License
+
+Public domain.
+
 ## Tips
 
 This is not related to syntax directly, but I think users who codes rc shell script in Vim may have interests.
