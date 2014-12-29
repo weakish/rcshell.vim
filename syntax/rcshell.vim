@@ -20,12 +20,12 @@
 " There is a tradeoff: less powerful `(ba)sh like substitution` syntax
 " error detection.
 "
-" Disable loading this plugin.
+" Only do this when not done yet for this buffer.
 "
-if exists("g:loaded_rcshell")
+if exists("b:loaded_rcshell")
   finish
 endif
-let g:loaded_rcshell = 1
+let b:loaded_rcshell = 1
 "
 " For version 5.x: Clear all syntax items
 " For version 6.x: Quit when a syntax file was already loaded
