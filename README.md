@@ -46,12 +46,23 @@ tar --strip=1 -zxf path/to/master.tar.gz
 
 By default, `.rcrc*`, `rcrc` and files with starting with an rc shebanc (`#!/something/.../rc`) will be highlighted.
 
+### Add rc shell syntax to other file extensions
+
 If you want to add other file extensions, you can add the following lines in `.vimrc`:
 
 ```vim
 au BufRead,BufNewFile *.your_extension set filetype=rcshell
 ```
-For example, you could 
+
+For example, you could write
+
+```
+au BufRead,BufNewFile *.rc set filetype=rcshell
+```
+
+to catch all files with an `.rc` extension. 
+
+### Use another syntax for files which this extension detects.
 
 If you want to use `.rcrc*`, `rcrc` or `*.rc` for another file type, you can specify the file type in `.vimrc`.
 
@@ -61,12 +72,18 @@ For example, if you want to use `.rc` for M$ Resource file:
 au BufRead,BufNewFile *.rc set filetype=rc
 ```
 
+(Confusingly, `rc` is the name of the default filetype in vim.)
+
+### Other
+
 You can also use `setfiletype` (without a space) to set the filetype if it has not already been set:
 
 ```vim
 au BufRead,BufNewFile *.your_extension setfiletype rcshell
 ```
 See `:help filetype` and `:help setfiletype` for more information.
+
+### Disable this syntax file.
 
 If you want to disable this syntax file, add the following line in your `.vimrc`:
 
