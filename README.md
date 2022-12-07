@@ -2,10 +2,9 @@ This is a syntax file for the rc shell scripting language.
 
 ## Compatibility
 
-For unix (not plan9) users, there are two slightly different rc available.
-One is [plan9port][plan9port] and [9base][9base]'s version
-and the other is Byron Rakitzis'
-(as packaged by Debian and other *nix software distribution).
+For unix (not plan9) users, there are two slightly different versions of rc available.
+
+One is [plan9port][plan9port] and [9base][9base]'s version and the other is Byron Rakitzis' (as packaged by Debian and other *nix software distribution).
 
 This syntax file is compatible with both versions.
 
@@ -45,30 +44,28 @@ tar --strip=1 -zxf path/to/master.tar.gz
 
 ## Configuration
 
-By default, `.rcrc*`, `rcrc` and files with a shebang of `rc` will be highlighted.
+By default, `.rcrc*`, `rcrc` and files with starting with an rc shebanc (`#!/something/.../rc`) will be highlighted.
 
 If you want to add other file extensions, you can add the following lines in `.vimrc`:
 
 ```vim
-au BufRead,BufNewFile *.your_exetension set filetype=rcshell
+au BufRead,BufNewFile *.your_extension set filetype=rcshell
 ```
+For example, you could 
 
-If you want to use `.rcrc*`, `rcrc` or `*.rc` for other file type, you specify the file type in `.vimrc`.
+If you want to use `.rcrc*`, `rcrc` or `*.rc` for another file type, you can specify the file type in `.vimrc`.
 
-For example, if you want to reverse `.rc` for M$ Resource file:
+For example, if you want to use `.rc` for M$ Resource file:
 
 ```vim
 au BufRead,BufNewFile *.rc set filetype=rc
 ```
 
-As `rc` is the default file type in Vim, you can also use this line instead:
+You can also use `setfiletype` (without a space) to set the filetype if it has not already been set:
 
 ```vim
-au BufRead,BufNewFile *.your_exetension setfiletype rcshell
+au BufRead,BufNewFile *.your_extension setfiletype rcshell
 ```
-
-`:setfiletype` will only set 'filetype' if no file type was detected yet.
-
 See `:help filetype` and `:help setfiletype` for more information.
 
 If you want to disable this syntax file, add the following line in your `.vimrc`:
@@ -96,7 +93,7 @@ Public domain.
 
 ## Tips
 
-This is not related to syntax directly, but I think users who codes rc shell script in Vim may have interests.
+This is not related to the syntax directly, but I think users who code with the rc shell script in Vim may be interested:
 
 If you want to use `rc` as the embedded shell in vim,
 add the following lines to your .vimrc:
