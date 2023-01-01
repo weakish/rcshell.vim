@@ -44,7 +44,7 @@ tar --strip=1 -zxf path/to/master.tar.gz
 
 ## Configuration
 
-By default, `.rcrc*`, `rcrc` and files with starting with an rc shebanc (`#!/something/.../rc`) will be highlighted.
+By default, `.rcrc*`, `rcrc` and files starting with an rc shebang (`#!/something/.../rc`) will be highlighted.
 
 ### Add rc shell syntax to other file extensions
 
