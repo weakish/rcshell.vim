@@ -100,8 +100,8 @@ syn cluster rcRedirect  contains=rcRedir,rcHereDoc
 syn match   rcRedir     "[<>]\v(\[\d+\=?\d*])?\ze([^{]|$)"  skipwhite nextgroup=@rcArgument contains=rcNumber
 syn match   rcRedir     ">>"                                skipwhite nextgroup=@rcArgument
 
-syn region  rcHereDoc   matchgroup=rcOperator    start="<<\(\[[0-9]\+\]\)\=\s*\z([^'> ]\+\)"   end="^\z1$" contains=rcVar
-syn region  rcHereDoc   matchgroup=rcOperator    start="<<\(\[[0-9]\+\]\)\=\s*\'\z([^']\+\)'" end="^\z1$"
+syn region  rcHereDoc   matchgroup=rcOperator    start="<\@<!<<\(\[[0-9]\+\]\)\=\s*\z([^'<> ]\+\)"   end="^\z1$" contains=rcVar
+syn region  rcHereDoc   matchgroup=rcOperator    start="<\@<!<<\(\[[0-9]\+\]\)\=\s*\'\z([^']\+\)'" end="^\z1$"
 " Todo: hero document in compound block
 
 "Compound Commands
