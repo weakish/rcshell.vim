@@ -100,11 +100,9 @@ syn cluster rcRedirect  contains=rcRedir,rcHereDoc
 syn match   rcRedir     "[<>]\v(\[\d+\=?\d*])?\ze([^{]|$)"  skipwhite nextgroup=@rcArgument contains=rcNumber
 syn match   rcRedir     ">>"                                skipwhite nextgroup=@rcArgument
 
-syn region  rcHereDoc   matchgroup=rcOperator    start="<<\z([^<> ]\+\)"   end="^\z1$" contains=rcVar
-syn region  rcHereDoc   matchgroup=rcOperator    start="<<'\z(.*\)'" end="^\z1$"
-" Todo: what's with ^'s in here docs?
-" Todo: <<'>' >output or <<' 'EOF >output still doesn't get highlighted
-" correct, but I guess peopel are unlikely to write such scripts.
+syn region  rcHereDoc   matchgroup=rcOperator    start="<\@<!<<\(\[[0-9]\+\]\)\=\s*\z([^'<> ]\+\)"   end="^\z1$" contains=rcVar
+syn region  rcHereDoc   matchgroup=rcOperator    start="<\@<!<<\(\[[0-9]\+\]\)\=\s*\'\z([^']\+\)'" end="^\z1$"
+" Todo: hero document in compound block
 
 "Compound Commands
 """"""""""""""""""
